@@ -1,0 +1,19 @@
+import personajes.*
+
+describe "contextoAlAtacarToro" {
+	
+	fixture {
+		tulipan
+		toro.lucharManoAMano(tulipan)
+	}
+	
+	test "Al atacar a alguien Toro tiene el último item de su oponente" {
+		assert.that(toro.itemsDelInventario().contains("manguera"))
+	}
+
+	test "El oponenete de Toro ya no tiene su último item" {
+		
+		assert.notThat(tulipan.itemsDelInventario().contains("manguera"))
+	}
+
+}

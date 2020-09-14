@@ -1,0 +1,15 @@
+import equipos.*
+
+test "Sin combatir el equipo1 tiene mas energía" {
+	assert.that(competencia.equipoGanador() == equipo1)
+}
+
+test "Si el equipo2 ataca y el equipo1 no, gana el 2" {
+	equipo2.combatir(equipo1)
+	assert.that(competencia.equipoGanador() == equipo2)
+}
+
+test "Al competir gana el equipo 1" {
+	competencia.combatir()
+	assert.that(competencia.equipoGanador() == equipo1)
+}
